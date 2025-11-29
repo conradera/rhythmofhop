@@ -1,0 +1,50 @@
+{
+  "name": "heart-of-africa-academy-website",
+  "version": "1.0.0",
+  "description": "Official website for Rythm of Hope - Empowering Minds! Transforming Lives!",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "build": "echo 'No build process needed for static site'",
+    "dev": "npx http-server . -p 3000 -o -c-1",
+    "lint": "npx htmlhint *.html && npx csslint css/style.css && npx jshint js/main.js",
+    "validate": "npx html-validate *.html",
+    "optimize": "npx imagemin images/*.{jpg,png} --out-dir=images/optimized",
+    "deploy": "echo 'Deploy to your hosting provider'"
+  },
+  "keywords": [
+    "education",
+    "africa",
+    "academy",
+    "nonprofit",
+    "charity",
+    "website",
+    "responsive",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Rythm of Hope",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "htmlhint": "^1.1.4",
+    "csslint": "^1.0.5",
+    "jshint": "^2.13.6",
+    "html-validate": "^8.7.4",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heartofafricaacademy/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/heartofafricaacademy/website/issues"
+  },
+  "homepage": "https://heartofafricaacademy.org",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Gallery - Rythm of Hope</title>
+    <meta name="description" content="Explore our photo gallery showcasing the impact of our educational work across communities in Africa through holistic education, mentorship, and community empowerment programs.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/IMG_6602.JPG" alt="Rythm of Hope" class="logo-image">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="programs.html" class="nav-link">Programs</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#donate" class="nav-link donate-btn" onclick="openDonateModal(); return false;">Donate</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('images/slider 2.JPG'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Photo Gallery</h1>
+            <p>Capturing moments of hope, transformation, and impact across Africa</p>
+        </div>
+    </section>
+
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/slider 1.JPG" alt="Children learning in classroom">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/slider 2.JPG" alt="Healthcare support">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/slider 3.JPG" alt="Community gathering">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/slider 4.JPG" alt="Educational activities">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6447.JPG" alt="Community Events">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6448.JPG" alt="Medical Outreach">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6451.JPG" alt="Community Development">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6508.JPG" alt="Graduation Ceremony">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6513.JPG" alt="Special Events">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6516.JPG" alt="Learning Activities">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6517.JPG" alt="Community Workshop">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6518.JPG" alt="Health Education">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6519.JPG" alt="Student Success">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6520.JPG" alt="Community Meeting">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6521.JPG" alt="Cultural Celebration">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6522.JPG" alt="Skills Training">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6523.JPG" alt="Community Project">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="images/IMG_6524.JPG" alt="Health Outreach">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Be part of our story</h2>
+            <a href="#" class="btn btn-white" onclick="openDonateModal()">Support Our Mission</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/IMG_6602.JPG" alt="Rythm of Hope" class="footer-logo">
+                    <p>Empowering minds and transforming lives through holistic education, skills development, mentorship and community empowerment across Africa.</p>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-envelope"></i> info@rythmofhopeug.org</p>
+                        <p><i class="fas fa-phone"></i> +256 702 584274</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#" onclick="openDonateModal()">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rythm of Hope. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donate Modal -->
+    <div class="modal" id="donateModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonateModal()">&times;</span>
+            <h2>Support Our Mission</h2>
+            <p>Choose your preferred donation method:</p>
+            <div class="donation-options">
+                <a href="#" class="donation-btn">
+                    <i class="fas fa-university"></i>
+                    <span>Bank Transfer</span>
+                </a>
+                <a href="#" class="donation-btn">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Airtel Money</span>
+                </a>
+                <a href="#" class="donation-btn">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>MTN Mobile Money</span>
+                </a>
+                <a href="#" class="donation-btn">
+                    <i class="fab fa-paypal"></i>
+                    <span>PayPal</span>
+                </a>
+            </div>
+            <div class="donation-details">
+                <h4>Bank Details:</h4>
+                <p><strong>Bank:</strong> [Bank Name]</p>
+                <p><strong>Account Name:</strong> Rythm of Hope</p>
+                <p><strong>Account Number:</strong> [Account Number]</p>
+                <p><strong>Swift Code:</strong> [Swift Code]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
