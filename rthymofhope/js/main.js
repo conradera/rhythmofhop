@@ -7,7 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initMobileMenu();
     initHeroSlider();
+    
+    // Debug: Check image loading
+    checkImageLoading();
 });
+
+// Check image loading and handle errors
+function checkImageLoading() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            // Silently handle image errors
+            const parent = this.closest('.gallery-image, .gallery-item');
+            if (parent) {
+                this.style.display = 'none';
+            }
+        });
+    });
+}
 
 // Navbar functionality
 function initNavbar() {
@@ -345,6 +362,122 @@ function initGalleryFilter() {
 // Initialize gallery filter if on gallery page
 if (window.location.pathname.includes('gallery.html')) {
     initGalleryFilter();
+    initGalleryLightbox();
+}
+
+// Gallery Lightbox functionality
+let currentImageIndex = 0;
+let galleryImages = [];
+
+function initGalleryLightbox() {
+    // Get all gallery images
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryImages = Array.from(galleryItems).map(item => {
+        const img = item.querySelector('img');
+        return {
+            src: img.src,
+            alt: img.alt
+        };
+    });
+    
+    // Add error handling for images
+    const images = document.querySelectorAll('.gallery-image img');
+    images.forEach(img => {
+        img.addEventListener('error', function() {
+            this.style.display = 'none';
+            const parent = this.closest('.gallery-image');
+            if (parent) {
+                parent.innerHTML = '<div class="placeholder-image"><i class="fas fa-image"></i><p>Image not available</p></div>';
+            }
+        });
+        
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        }
+    });
+}
+
+function openLightbox(imageSrc, imageAlt) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    if (!lightbox || !lightboxImage) return;
+    
+    // Find the index of the clicked image
+    currentImageIndex = galleryImages.findIndex(img => img.src.includes(imageSrc.split('/').pop()));
+    if (currentImageIndex === -1) {
+        currentImageIndex = 0;
+    }
+    
+    // Set image and caption
+    lightboxImage.src = imageSrc;
+    lightboxImage.alt = imageAlt;
+    lightboxCaption.textContent = imageAlt;
+    
+    // Show lightbox
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(event) {
+    if (event) {
+        event.stopPropagation();
+        // Only close if clicking on the backdrop or close button
+        if (event.target.classList.contains('lightbox-close') || event.target.id === 'lightbox') {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    } else {
+        // Called without event (e.g., from keyboard)
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+}
+
+function changeImage(direction, event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    
+    if (galleryImages.length === 0) return;
+    
+    currentImageIndex += direction;
+    
+    if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+    } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+    }
+    
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    if (lightboxImage && lightboxCaption && galleryImages[currentImageIndex]) {
+        lightboxImage.src = galleryImages[currentImageIndex].src;
+        lightboxImage.alt = galleryImages[currentImageIndex].alt;
+        lightboxCaption.textContent = galleryImages[currentImageIndex].alt;
+    }
 }
 
 // Team description toggle functionality

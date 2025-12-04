@@ -14,8 +14,9 @@ html {
     --accent-color: #FF0000;
     --secondary-color: #FFFFFF;
     --text-color: #333333;
-    --light-gray: #f8f9fa;
+    --light-gray: #e8e9ea;
     --dark-gray: #666666;
+    --cream-bg: #e8e6e1;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
@@ -26,6 +27,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    background-color: var(--cream-bg);
 }
 
 .container {
@@ -440,7 +442,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55));
     z-index: 2;
 }
 
@@ -449,11 +451,6 @@ p {
     z-index: 3;
     max-width: 900px;
     padding: 60px 40px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -513,6 +510,8 @@ section {
 /* About Preview Section */
 .about-preview {
     background-color: var(--light-gray);
+    padding-top: 40px;
+    padding-bottom: 100px;
 }
 
 .values-grid {
@@ -523,7 +522,7 @@ section {
 }
 
 .value-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -566,7 +565,7 @@ section {
 }
 
 .program-card {
-    background: var(--secondary-color);
+    background: var(--cream-bg);
     padding: 3rem 2rem;
     border-radius: 20px;
     text-align: center;
@@ -623,8 +622,7 @@ section {
 
 /* Impact Section */
 .impact {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(211, 47, 47, 0.8)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/><circle fill="%23e0e0e0" cx="200" cy="150" r="100"/><circle fill="%23d0d0d0" cx="600" cy="300" r="150"/><circle fill="%23c0c0c0" cx="1000" cy="200" r="120"/></svg>');
+    background: url('../images/IMG_6521.JPG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -634,12 +632,7 @@ section {
 }
 
 .impact-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+    display: none;
 }
 
 .impact .section-header {
@@ -647,9 +640,18 @@ section {
     z-index: 2;
 }
 
-.impact .section-header h2,
+.impact .section-header h2 {
+    color: var(--secondary-color) !important;
+    -webkit-text-fill-color: var(--secondary-color) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
 .impact .section-header p {
     color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .impact-stats {
@@ -678,6 +680,7 @@ section {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Call to Action Section */
@@ -806,7 +809,7 @@ section {
 }
 
 .modal-content {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     margin: 10% auto;
     padding: 2rem;
     border-radius: 15px;
@@ -1299,6 +1302,12 @@ section {
         font-size: 0.9rem;
     }
     
+    .page-header {
+        min-height: 300px;
+        padding: 100px 0 60px;
+        background-attachment: scroll !important;
+    }
+    
     .page-header h1 {
         font-size: 2rem;
     }
@@ -1308,16 +1317,59 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    .page-header {
+        min-height: 250px;
+        padding: 80px 0 50px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Page Header */
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(211, 47, 47, 0.7)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><path fill="%23e0e0e0" d="M0,300 Q300,200 600,300 T1200,300 L1200,400 L0,400 Z"/></svg>');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: var(--secondary-color);
     text-align: center;
     padding: 120px 0 80px;
     margin-top: 80px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Ensure banner images load properly */
+.page-header {
+    background-attachment: scroll;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .page-header {
+        background-attachment: fixed;
+    }
+}
+
+/* Fallback for browsers that don't support background-attachment: fixed */
+@supports not (background-attachment: fixed) {
+    .page-header {
+        background-attachment: scroll;
+    }
 }
 
 .page-header h1 {
@@ -1379,7 +1431,7 @@ section {
 }
 
 .achievement-card {
-    background: var(--secondary-color);
+    background: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -1745,7 +1797,7 @@ section {
 }
 
 .philosophy {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .educational-approach {
@@ -1759,7 +1811,7 @@ section {
 }
 
 .approach-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -1786,7 +1838,7 @@ section {
 }
 
 .leadership {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .team-grid {
@@ -2010,7 +2062,7 @@ section {
 }
 
 .area-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -2057,7 +2109,7 @@ section {
 }
 
 .community-gallery {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .gallery-grid {
@@ -2100,7 +2152,7 @@ section {
 }
 
 .goal-item {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -2134,7 +2186,7 @@ section {
 .form-container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 3rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -2483,7 +2535,7 @@ section {
 }
 
 .news-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -2629,7 +2681,7 @@ section {
 }
 
 .contact-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -2709,7 +2761,7 @@ section {
 }
 
 .faq-item {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow);
@@ -2727,7 +2779,7 @@ section {
 }
 
 .social-media-section {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .social-grid {
@@ -2776,7 +2828,7 @@ section {
 }
 
 .documentaries-section {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .publications-archive {
@@ -2793,7 +2845,7 @@ section {
 
 .publication-card,
 .documentary-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -2909,7 +2961,7 @@ section {
 
 .gallery-section {
     padding: 80px 0;
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
 }
 
 .gallery-grid {
@@ -2936,6 +2988,7 @@ section {
     position: relative;
     height: 250px;
     overflow: hidden;
+    background-color: var(--light-gray);
 }
 
 .gallery-image img {
@@ -2943,6 +2996,44 @@ section {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
+    display: block;
+    background-color: var(--light-gray);
+}
+
+.gallery-image img[src=""],
+.gallery-image img:not([src]) {
+    opacity: 0;
+}
+
+.gallery-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--accent-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+.gallery-image.loading::before {
+    display: block;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.1);
 }
 
 .placeholder-image {
@@ -2977,7 +3068,7 @@ section {
 }
 
 .story-card {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -3101,7 +3192,7 @@ section {
 
 /* Objectives Section */
 .objectives {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 80px 0;
 }
 
@@ -3159,7 +3250,7 @@ section {
 }
 
 .team-member {
-    background-color: var(--secondary-color);
+    background-color: var(--cream-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
@@ -3320,5 +3411,148 @@ section {
     
     .position {
         font-size: 0.9rem;
+    }
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--secondary-color);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: var(--transition);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 0, 0, 0.7);
+    transform: rotate(90deg);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    z-index: 10000;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .lightbox-image {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 24px;
+        padding: 15px;
+    }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        bottom: 10px;
+        padding: 8px 15px;
     }
 }
